@@ -33,10 +33,11 @@
 					
 					// $this->session->set_userdata($loginUser); -> maksudnya mengset userdata yang mana datanya diambil dari $loginUser
 					$this->session->set_userdata($loginUser);
+				
 
-					if($loginUser['id_level_user'] = 2) {
+					if($loginUser['id_level_user'] == 2) {
 						redirect('tampilan_operator');
-					} else{
+					} else if ($loginUser['id_level_user'] == '1'){
 						redirect('tampilan_utama');
 					}
 
