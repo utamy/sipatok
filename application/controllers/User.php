@@ -86,7 +86,7 @@
 		{
 			$kode_user = $this->uri->segment(3);
 			if (!empty($kode_user)) {
-				$this->db->where('kd_user', $kode_user);
+				$this->db->where('id_user', $kode_user);
 				$this->db->delete('tbl_user');
 			}
 			redirect('user');
