@@ -44,7 +44,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>SPTK</b></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>SIPATOK</b></span>
+      <span class="logo-lg"><b>SIPATOK</b></span></a>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -69,7 +69,7 @@
 
                 <p>
                   <?php echo $this->session->userdata('nama_lengkap'); ?>
-                  <small>Member since Nov. 2012</small>
+                  <small>@SIPATOK</small>
                 </p>
               </li>
               <!-- Menu Body -->
