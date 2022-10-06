@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
+  <title>SIPATOK | Sistem Informasi Harga Patokan</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -35,7 +35,9 @@
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+      <center><img src="<?php echo base_url(); ?>/uploads/logo.png" alt="" style="width:100px"></center>
+
+        <p class="login-box-msg">Sistem Informasi Harga Patokan</p>
 
         <?php echo form_open('auth/check_login'); ?>
 
