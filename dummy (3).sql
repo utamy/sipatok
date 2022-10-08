@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 07, 2022 at 07:07 AM
+-- Generation Time: Oct 08, 2022 at 12:37 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.19
 
@@ -56,52 +56,14 @@ CREATE TABLE `invoice_details` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_kayu_hti`
+-- Table structure for table `m_bphp`
 --
 
-CREATE TABLE `jenis_kayu_hti` (
-  `KAYU_NO` varchar(7) DEFAULT NULL,
-  `KETERANGAN` varchar(16) DEFAULT NULL,
-  `KEL_NO` varchar(6) DEFAULT NULL,
-  `NAMA_LOKAL` varchar(10) DEFAULT NULL,
-  `NAMA_LATIN` varchar(10) DEFAULT NULL,
-  `CREATED_BY` varchar(10) DEFAULT NULL,
-  `CREATED_DATE` varchar(12) DEFAULT NULL,
-  `UPDATED_BY` varchar(10) DEFAULT NULL,
-  `UPDATED_DATE` varchar(12) DEFAULT NULL,
-  `NO_URUT` varchar(7) DEFAULT NULL,
-  `CONV_VALUE` varchar(10) DEFAULT NULL,
-  `TARIF_PSDH` varchar(10) DEFAULT NULL,
-  `NULL` int DEFAULT NULL
+CREATE TABLE `m_bphp` (
+  `id` int NOT NULL,
+  `nama` text,
+  `id_provinsi` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
---
--- Dumping data for table `jenis_kayu_hti`
---
-
-INSERT INTO `jenis_kayu_hti` (`KAYU_NO`, `KETERANGAN`, `KEL_NO`, `NAMA_LOKAL`, `NAMA_LATIN`, `CREATED_BY`, `CREATED_DATE`, `UPDATED_BY`, `UPDATED_DATE`, `NO_URUT`, `CONV_VALUE`, `TARIF_PSDH`, `NULL`) VALUES
-('', 'Pinus', '', '', '', 'REHAN', '06-11-2015', '', '', '6', '0', '63', 0),
-('', 'Acasia', '', '', '', 'REHAN', '06-11-2015', '', '', '1', '0', '59', 5400),
-('', 'Balsa', '', '', '', 'REHAN', '06-11-2015', '', '', '2', '0', '63', 3000),
-('', 'Ekaliptus', '', '', '', 'REHAN', '06-11-2015', '', '', '3', '0', '67', 5400),
-('', 'Gmelina arborea', '', '', '', 'REHAN', '06-11-2015', '', '', '4', '0', '63', 3900),
-('', 'Karet', '', '', '', 'REHAN', '06-11-2015', '', '', '5', '0', '63', 6000),
-('', 'Sengon', '', '', '', 'REHAN', '06-11-2015', '', '', '7', '0', '63', 6900),
-('', 'Jenis lain', '', '', '', 'REHAN', '06-11-2015', '', '', '11', '0', '63', 6000),
-('', 'Bakau', '', '', '', 'REHAN', '06-11-2015', '', '', '9', '0', '63', 5100),
-('', 'Jabon', '', '', '', 'REHAN', '06-11-2015', '', '', '10', '0', '63', 5400),
-('', 'Sungkai', '', '', '', 'REHAN', '06-11-2015', '', '', '8', '0', '63', 0),
-('', 'Jati', '', '', '', 'REHAN', '15-01-2016', '', '', '12', '0', '63', 69),
-('', 'Mahoni', '', '', '', 'REHAN', '15-01-2016', '', '', '13', '0', '63', 69),
-('', 'Sentang', '', '', '', 'REHAN', '15-01-2016', '', '', '14', '0', '63', 69),
-('', 'Melaleuca', '', '', '', 'REHAN', '15-01-2016', '', '', '15', '0', '63', 69),
-('', 'Johar', '', '', '', 'FENDI', '03-05-2022', '', '', '10', '0', '63', 5400),
-('', 'Belangeran (HT)', '', '', '', 'FENDI', '14-06-2022', '', '', '21', '0', '63', 69),
-('', 'Kayu Bakar', '', '', '', 'REHAN', '15-01-2016', '', '', '16', '1', '69', NULL),
-('', 'Sonokembang (HT)', '', '', '', 'FENDI', '02-08-2019', '', '', '17', '0', '63', 69),
-('', 'Sonobrits (HT)', '', '', '', 'FENDI', '02-08-2019', '', '', '19', '0', '63', 69),
-('', 'Sonokeling (HT)', '', '', '', 'FENDI', '02-08-2019', '', '', '18', '0', '63', 69),
-('', 'Waru (HT)', '', '', '', 'FENDI', '18-01-2021', '', '', '20', '0', '63', 69);
 
 -- --------------------------------------------------------
 
@@ -350,10 +312,10 @@ INSERT INTO `m_jenis_kayu` (`KAYU_NO`, `KETERANGAN`, `KEL_NO`, `NAMA_LOKAL`, `NA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_kab`
+-- Table structure for table `m_kabupaten`
 --
 
-CREATE TABLE `m_kab` (
+CREATE TABLE `m_kabupaten` (
   `KODE_PROP` varchar(9) DEFAULT NULL,
   `KODE_CDK` varchar(8) DEFAULT NULL,
   `KETERANGAN` varchar(25) DEFAULT NULL,
@@ -369,10 +331,10 @@ CREATE TABLE `m_kab` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `m_kab`
+-- Dumping data for table `m_kabupaten`
 --
 
-INSERT INTO `m_kab` (`KODE_PROP`, `KODE_CDK`, `KETERANGAN`, `DINAS_TEKNIS`, `ALAMAT`, `KOTA`, `TELP`, `FAX`, `TELEX`, `KOTAK_POS`, `EMAIL`, `KODE_POS`) VALUES
+INSERT INTO `m_kabupaten` (`KODE_PROP`, `KODE_CDK`, `KETERANGAN`, `DINAS_TEKNIS`, `ALAMAT`, `KOTA`, `TELP`, `FAX`, `TELEX`, `KOTAK_POS`, `EMAIL`, `KODE_POS`) VALUES
 ('06', '02', 'Bengkalis', 'DINAS KEHUTANAN', 'Jl. Jenderal Sudirman No. 024', 'Bengkalis', '(0766) 21016', '-', '-', '-', '-', '-'),
 ('06', '04', 'Indragiri Hulu', '', '', '', '', '', '', '', '', ''),
 ('06', '05', 'Indragiri Hilir', 'Dinas Kehutanan Kabupaten Indragiri Hilir', 'l. Pendidikan No. 06 Tembilahan', '', '-Tlp. (0768) 21138, 22103; Fax. 0768-21301', '-', 'Fax. 0768-21301', '-', '-', '-'),
@@ -923,10 +885,10 @@ INSERT INTO `m_kelompok_jenis_kayu` (`KEL_NO`, `KETERANGAN`, `URUT`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_perusahaan`
+-- Table structure for table `m_pbph`
 --
 
-CREATE TABLE `m_perusahaan` (
+CREATE TABLE `m_pbph` (
   `NPWSHUT_NO` varchar(11) NOT NULL,
   `NAMA_PERUSAHAAN` varchar(50) DEFAULT NULL,
   `ALAMAT` varchar(100) DEFAULT NULL,
@@ -963,10 +925,10 @@ CREATE TABLE `m_perusahaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `m_perusahaan`
+-- Dumping data for table `m_pbph`
 --
 
-INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
+INSERT INTO `m_pbph` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
 ('0102A01ACIN', 'PT. ACEHNUSA INDRAPURI', 'Menara Batavia Lt.14 Jl.KH Mas Mansyur Kav.126 ', '021-5722470', '', '', '2 ', 'ACIN', '01', '02', 'Jakarta', '10220', 'MENTERI', 'SK.131/MENLHK-II/2015', '04-05-2015', '021-5722471', '-', 'ADMIN-DEDI', '01-02-2016', 'OPERATOR-BP2HP1', '21-02-2018', '05-08-1997', '04-08-2040', 'Jl. Waki Musa No. 23 Dusun Ujong Aloe Desa Lhong Cut Kecamatan Banda Raya', 'Banda Aceh', '-', '0651-34612', '-', '111000', '', '', '', NULL),
 ('0103A02RPPI', 'PT. RENCONG PULP DAN PAPER INDUSTRY', 'Chase Plaza Lt. 11 Jl. Sudriman Kav. 21  ', '', '', '', '2 ', 'RPPI', '01', '03', 'Jakarta ', '12920 ', 'GUBERNUR', '522.51/569/2011', '17-10-2011', '', '', 'ADMIN-FEBI', '23-02-2016', '', '', '17-10-2011', '17-10-2071', '', '', '', '', '', '10384', '', '', '', NULL),
 ('0104A15RTSA', 'PT. RIMBA TIMUR SENTOSA', 'Perumahan Pantai Indah Sutra Blok C No. 1 Jl. Tanjung Datuk Ujung Pekanbaru', '0761-886249, 849189', '', '', '2 ', 'RTSA', '01', '04', 'Pekanbaru', '-', 'MENTERI', '262/Kpts-II/1997', '19-05-1997', '', '', 'ADMIN-NANA', '03-08-2016', '', '', '25-09-1993', '24-09-2053', '', '', '', '', '', '6250', '', '', '', NULL),
@@ -1101,7 +1063,7 @@ INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `
 ('1602AXAANRG', 'PT. Anuraga', 'Jl. Sunan Derajat No. 36V Jakarta Timur', '021-4890142', '', '', '1 ', 'ANRG', '16', '02', 'Jakarta', '-', 'MENTERI', '237/Kpts-IV/87', '31-07-1987', '021-4759614', '', 'PUHH-DEPHUT', '04-09-2008', 'PUHH-DEPHUT', '05-09-2008', '', '01-01-2016', '', '', '', '', '', '0', '', '', '', NULL),
 ('1602B02FNTR', 'PT. FINNANTARA INTIGA', 'Jl. Flamboyan No. 104 Komp. Sanggau Permai ', '-', '', '', '2 ', 'FNTR', '16', '02', 'Sanggau', '-', 'MENTERI', '750/Kpts-II/1996', '02-12-1996', '-', 'puhhfinnantara@sinarmasforestry.com', 'ADMIN-BIKPHH', '27-12-2015', 'ADMIN-HANNA', '22-01-2016', '02-12-1996', '01-12-2039', '-', '-', '-', '-', '-', '299700', '', '', '', NULL),
 ('1602B03LHSK', 'PT. LAHAN SUKSES', 'Jl. Pasar Pagi No. 16', '021-6903118', '', '', '2 ', 'LHSK', '16', '02', 'Jakarta', '-', 'MENTERI', '318/Kpts-II/1998', '27-02-1998', '021-6903123', '-', 'ADMIN-HANNA', '05-10-2016', '', '', '21-02-1992', '21-02-2047', '-', '-', '-', '-', '-', '14460', '', '', '', NULL);
-INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
+INSERT INTO `m_pbph` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
 ('1602B08GSAL', 'PT. GAMBARU SELARAS ALAM', 'Gedung Rabithah Alawiyah Lt. 1 Jl. TB. Simatupang No. 7 A Jakarta', '082353539577', '', '', '2 ', 'GSAL', '16', '02', 'Sanggau', '78563', 'MENTERI', '739/Menhut-II/2014', '02-09-2014', '', 'rahmadbs.70@gmail.com', '', '08-12-2020', '', '', '02-09-2014', '02-09-2074', 'Jl. Purnama Agung VII No. 1 A Pontianak', 'Pontianak', '78121', '', '03 141 595 3 701 000', '20445', '', '74466', '', NULL),
 ('1603A03BTSN', 'PT.  Batasan', 'Jl. Pasar Pagi No. 16', '021-6903118', '', '', '1 ', 'BTSN', '16', '03', 'Jakarta', '11230', 'MENTERI', '416/Menhut-II/2004', '19-10-2004', '021-6903123', '-', 'PUHH-DEPHUT', '25-08-2008', 'PUHH-DEPHUT', '03-06-2013', '19-10-2004', '18-10-2049', 'Komp. Tanjungpura Indah Blok H No.10 - 11', 'Pontianak', '-', '0561-736621', '0561-732781', '49150', '', '', '', NULL),
 ('1603A03SBKK', 'PT. Sari Bumi Kusuma Kalbar', 'Jl. Adisucipto Km.5,3 ', '0561-721866,', '', '', '1 ', 'SBKK', '16', '03', 'Pontianak', '', 'MENTERI', '58/Menhut-II/07', '22-02-2007', ' 0561-721583  ', '', 'PUHH-DEPHUT', '25-08-2008', 'PUHH-DEPHUT', '04-03-2013', '', '01-01-2016', '', '', '', '', '', '75200', '', '', '', NULL),
@@ -1225,7 +1187,7 @@ INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `
 ('1711AXXSKWR', 'PT. SIKATAN WANA RAYA', 'KOBEXINDO TOWER LANTAI 5 JL. Pasir Putih Raya, Blok E-5-D, Ancil Timur - JAKARTA', '(021) 64701333', '', '', '1 ', 'SKWR', '17', '11', 'Jakarta', '14430', 'MENTERI', '107/Kpts-II/2000', '29-12-2000', '(021) 6459780', 'sikatanwanaraya138@gmail.com', 'PUHH-DEPHUT', '08-09-2008', 'UM-SIKATAN-01', '12-06-2022', '29-12-2000', '05-11-2049', 'Jalan Tjilik Riwut Km. 6.8 (Depan Perum Damri) Palangka Raya Kalimantan Tengah', 'Palangkaraya', '73112', '(0536) 21684', '(0536) 22770', '49400', '', '', '', NULL),
 ('1711C44TYEN', 'PT. TAIYOUNG ENGREEN', 'alan Pinus No. 94 RT.02 RW IX', '0536-3229351', '', '', '2 ', 'TYEN', '17', '11', 'Palangkaraya', '-', 'MENTERI', 'SK.78/MENHUT-II/2009', '05-03-2009', '', '', 'ADMIN-ROFIK', '16-02-2016', '', '', '05-03-2009', '05-03-2069', '', '', '', '', '', '59810', '', '', '', NULL),
 ('1711C55AGKA', 'PT. AGROMAS KENCANA ABADI', 'jalan Garuda No. 73A-B-C', '\n021-42871319', '', '', '1 ', 'AGKA', '17', '11', 'Jakarta', '-', 'MENTERI', '18/I/IUPHHK-HAPMDH/2016', '23-09-2016', '021-42871325', '', 'ADMIN-ROFIK2', '28-10-2016', '', '', '23-09-2016', '23-09-2061', '', '', '', '', '', '22686', '', '', '', NULL);
-INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
+INSERT INTO `m_pbph` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
 ('1711C78RACI', 'PT. RAMBA ARYA CITRA', 'Ruko Gading Batavia Blok LC 10 no. 22. Kelapa Gading. Jakarta Utara', '082159927154', '', '', '2 ', 'RACI', '17', '11', 'Jakarta', '14240', 'MENTERI', '19/1/IUPHHK-HTI/PMDN/2016', '05-10-2016', '-', 'rambaaryacitrapt@gmail.com', '', '15-11-2021', 'HTI-RAC', '13-06-2022', '05-10-2016', '05-10-2076', 'Jl. Badak Nomor 55 Palangka Raya', 'Palangka Raya', '73112', '', '017004128711000', '13702', '', '128609', '', NULL),
 ('1713A02KDPI', 'PT. KARYA DELTA PERMAI', 'Jl. Banda No. 3', '0536-3224233', '', '', '1 ', 'KDPI', '17', '13', 'Palangkaraya', '-', 'MENTERI', 'SK.429/Menhut-II/2004', '19-10-2004', '-', '-', 'PUHH-DEPHUT', '30-01-2012', 'PUHH-DEPHUT', '04-03-2013', '19-10-2004', '18-10-2049', 'Jl. Mayjend Sutoyo, S. No. 196', 'Banjarmasin', '-', '0511-4416473', '-', '79400', '', '', '', NULL),
 ('1713A05KTAD', 'PT. KAHAYAN TERANG ABADI', 'Jalan Lodan No. 12 A', '(021) 6911825', '', '', '1 ', 'KTAD', '17', '13', 'Jakarta Utara', '14430', 'MENTERI', '291/MENLHK/SETJEN/HPL.0/4/2019', '16-04-2019', '(021) 6904729', '-', 'PUHH-DEPHUT', '29-04-2014', 'ADAM-ADMIN', '22-03-2022', '16-04-2019', '15-04-2049', 'Jl. Kariraman No. 80', 'Palangkaraya', '-', '(0536) 3225610', '(0536) 3225610', '50000', '', '', '', NULL),
@@ -1345,7 +1307,7 @@ INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `
 ('1907A20RKRT', 'PT. RIMBA KARYA RAYATAMA UNIT II', 'Jl. P. Antasari No. 45', '0541-769405', '', '', '1 ', 'RKRT', '19', '07', 'Samarinda', '', 'MENTERI', 'SK.384/Menhut-II/2009', '02-07-2009', '0541-769408', '-', 'PUHH-DEPHUT', '09-01-2012', 'PUHH-DEPHUT', '04-03-2013', '02-07-2009', '01-01-2044', 'Ruko Mitra Sunter B-22', 'Jakarta Utara', '', '021-6506089', '021-65306858', '143970', '', '', '', NULL),
 ('1907A22JATI', 'PT. JAYA TIMBER', 'Jl. Basuki Rahmat No. 2 C', '(0541) 746231, 746186', '', '', '1 ', 'JATI', '19', '07', 'Samarinda', '-', 'MENTERI', 'SK. 100/2001 jo SK.96/Menhut-II/2011', '15-03-2001', '(0541) 746182', '-', 'PUHH-DEPHUT', '30-09-2013', 'PUHH-DEPHUT', '30-09-2013', '15-03-2001', '07-04-2020', 'Gd. Manggala Wanabakti Blok IV Lantai 5, R.513, Jl. Gatot Subroto', 'Jakarta', '10270', '(021) 5711310', '(021) 5711310', '53200', '', '', '', NULL),
 ('1907A37DEWA', 'PT. DEWATA WANATAMA LESTARI', 'Jl. KH Wahid Hasyim Gg. Assalam No. 46 Kelurahan Sempaja Selatan Kecamatan Samarinda Utara', '(0541) 765217', '', '', '1 ', 'DEWA', '19', '07', 'Samarinda', '71159', 'MENTERI', 'SK.390/Menhut-II/2012', '23-07-2012', '-', '-', 'PUHH-DEPHUT', '27-11-2013', 'ADMIN-DEDI', '28-02-2016', '23-07-2012', '31-12-2055', 'Soevereign Plaza 12th Floor, Unit A-E, Jl. Letjen TB Simatupang No. 36', 'Jakarta', '12430', '(021) 29400153', '(021) 29400160', '59805', '', '', '', NULL);
-INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
+INSERT INTO `m_pbph` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
 ('1907A43SUNU', 'PT. SEROJA UNIVERSUM NARWASTU', 'Jl. Basuki Rahmat No. 2C', '(0541) 2088234', '', '', '1 ', 'SUNA', '19', '07', 'Samarinda', '-', 'MENTERI', 'SK.97/Menhut-II/2008', '08-04-2008', '(0541) 746182', 'ptsun.smd@gmail.com', 'PUHH-DEPHUT', '30-09-2013', 'HANNA-ADMIN', '08-03-2019', '08-04-2008', '07-04-2053', 'Gedung Manggala Wanbakti Blok IV Lt. 5 R-512B, Jl. Gatot Subroto', 'Jakarta', '10270', '(021) 5711310', '(021) 5711310', '36500', '', '', '', NULL),
 ('1907A50KLWT', 'PT. KELAWIT WANALESTARI', 'Jl. HM Ardan No. 65 RT. 01, Kel. Sempaja Utara', '(0541) 739260', '', '', '2 ', 'KLWT', '19', '07', 'Samarinda', '75119', 'MENTERI', '169/Menhut-II/2005', '16-06-2005', '(0541) 739287', '-', 'ADMIN-BIKPHH', '28-12-2015', '', '', '16-06-2005', '31-12-2055', '', '', '', '', '', '22065', '', '', '', NULL),
 ('1907A51KLHL', 'PT. KELAWIT HUTANI LESTARI', 'Jl. H.M. Ardan No. 65 RT. 01, Kel. Sempaja Utara', '(0541) 739260', '', '', '2 ', 'KLHL', '19', '07', 'Samarinda', '75119', 'MENTERI', '160/Kpts-II/1997', '24-03-1997', '(0541) 739287', '-', 'ADMIN-BIKPHH', '28-12-2015', '', '', '24-03-1997', '24-03-2042', '', '', '', '', '', '9180', '', '', '', NULL),
@@ -1473,7 +1435,7 @@ INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `
 ('3004A01NIWE', 'PT. NUSA NIWE INDAH', 'Jl. Hasan Boesoerie No. 500, Ternate - Maluku Utara 97721', '0921-326500 ', '', '', '1 ', 'NIWE', '30', '04', '', '-', 'MENTERI', 'SK. 410/MENHUT-II/2004 ', '18-10-2004', '0921-328500 ', '', 'ADMIN-FEBI', '11-01-2016', '', '', '18-10-2004', '28-06-2044', '', '', '', '', '', '73500', '', '', '', NULL),
 ('3004A02KRCW', 'PT. KIRANA CAKRAWALA', 'Jl. Mononutu SK II/20 ', '0921-23009 - 20013', '', '', '2 ', 'KRCW', '30', '04', 'Ternate ', '', 'MENTERI', '184/kPTS-II/1997', '03-03-1997', '0921-21514', '', 'ADMIN-FEBI', '23-02-2016', '', '', '21-02-1992', '21-02-2027', 'Wisma Barito Pacific Lt. 8 Jl. S. Parman 62-63 Jakarta Barat ', '', '', '021-5306711', '021-5306680', '21265', '', '', '', NULL),
 ('3004AXXTPMD', 'PT. TUNAS PUSAKA MANDIRI', 'Jl. HR Rasuna Said Kav. B.10-11, 2nd Floor Suite 201, Atrium Mulia Building, Setiabudi', '(021) 52905800', '', '', '1 ', 'TPMD', '30', '04', 'Jakarta Selatan', '-', 'MENTERI', 'SK.351/Menhut-II/2006', '12-06-2006', '(021) 52902100', '-', 'PUHH-DEPHUT', '11-12-2013', 'PUHH-DEPHUT', '14-12-2013', '12-06-2006', '11-06-2051', 'Jl. Hasan Boesoerie No. 500', 'Ternate', '97721', '(0921) 326500, 21176, 22150', '-', '24430', '', '', '', NULL);
-INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
+INSERT INTO `m_pbph` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `NO_AKTE_PENDIRIAN`, `TGL_AKTE_PENDIRIAN`, `JENIS`, `INISIAL_PERUSAHAAN`, `KODE_PROP`, `KODE_CDK`, `KOTA`, `KODE_POS`, `SK_IZIN_OLEH`, `SK_IZIN_NO`, `SK_IZIN_TGL`, `FAX`, `EMAIL`, `USER_INSERT`, `DATE_INSERT`, `USER_UPDATE`, `DATE_UPDATE`, `TGL_IZIN_AWAL`, `TGL_IZIN_AKHIR`, `ALAMAT2`, `KOTA2`, `KODE_POS2`, `TELP2`, `FAX2`, `LUAS`, `SK_IZIN_OLEH_LAIN`, `ID_ONLINE`, `TIPE_KPH`, `NULL`) VALUES
 ('3004AXXWDUP', 'PT. Widuri Utama Persada', 'Jl. Ir. Juanda III/32', '021-3841225', '', '', '1 ', 'WDUP', '30', '04', 'Jakarta', '', 'MENTERI', '1016/Kpts-II/92', '10-10-1992', '', '', 'PUHH-DEPHUT', '24-10-2008', 'PUHH-DEPHUT', '24-10-2008', '', '01-01-2016', '', '', '', '', '', '0', '', '', '', NULL),
 ('3005A05TPMD', 'PT. Tunas Pusaka Mandiri', 'Jl. Ir. H. Juanda III/32', '021-3841225', '', '', '1 ', 'TPMD', '30', '05', 'Labuha', '', 'MENTERI', '351/Menhut-II/06', '12-05-2006', '', '', 'PUHH-DEPHUT', '25-08-2008', 'PUHH-DEPHUT', '14-12-2013', '12-05-2006', '11-05-2030', '', '', '', '', '', '', '', '', '', NULL),
 ('3005A07SKDM', 'PT. SURYA KIRANA DUTAMAS', 'Gedung Menara MTH Lt. 15, Suite 1501, Jl. MT Haryono Kav. 23, Jakarta Selatan 12810', '021-83782590,83782577,83782394', '', '', '1 ', 'SKDM', '30', '05', 'Labuha', '97791', 'MENTERI', 'SK.670/MENHUT-II/2009', '15-10-2009', '021-83782588', 'info@suryakiranadutamas', 'ADMIN-FEBI', '02-01-2016', '', '', '15-10-2009', '15-10-2054', '', '', '', '', '', '66230', '', '', '', NULL),
@@ -1544,10 +1506,10 @@ INSERT INTO `m_perusahaan` (`NPWSHUT_NO`, `NAMA_PERUSAHAAN`, `ALAMAT`, `TELP`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_prop`
+-- Table structure for table `m_provinsi`
 --
 
-CREATE TABLE `m_prop` (
+CREATE TABLE `m_provinsi` (
   `KODE_PROP` varchar(9) NOT NULL,
   `KETERANGAN` varchar(23) DEFAULT NULL,
   `WILAYAH` varchar(17) DEFAULT NULL,
@@ -1564,10 +1526,10 @@ CREATE TABLE `m_prop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
--- Dumping data for table `m_prop`
+-- Dumping data for table `m_provinsi`
 --
 
-INSERT INTO `m_prop` (`KODE_PROP`, `KETERANGAN`, `WILAYAH`, `DINAS_TEKNIS`, `ALAMAT`, `KOTA`, `TELP`, `FAX`, `TELEX`, `KOTAK_POS`, `EMAIL`, `BSPHH`, `KODE_POS`) VALUES
+INSERT INTO `m_provinsi` (`KODE_PROP`, `KETERANGAN`, `WILAYAH`, `DINAS_TEKNIS`, `ALAMAT`, `KOTA`, `TELP`, `FAX`, `TELEX`, `KOTAK_POS`, `EMAIL`, `BSPHH`, `KODE_POS`) VALUES
 ('00', 'Pusat (Kementerian LHK)', 'SELURUH INDONESIA', 'Kementerian Lingkungan Hidup dan Kehutanan', 'Gedung Manggala Wanabakti, Jl. Jenderal Gatot Subroto,Senayan', ' Jakarta Pusat', '(021) 5730261', '(021) 5720203', '(021) 5730272', '', 'helpdesksipuhh@dephut.net', '', '10270'),
 ('01', 'Nangroe Aceh Darussalam', 'SUMATERA', 'Dinas Kehutanan', 'Jl. Jenderal Sudirman No 21', 'Banda Aceh', '(0651) 42277, 43628', '(0651) 43628', '-', '', '-', '01', '-'),
 ('02', 'Sumatera Utara', 'SUMATERA', 'Dinas Kehutanan', 'Jl. Sisingamangaraja Km. 5,5 No. 14 Marindal', 'Medan', '(061) 7868438', '(061) 7862065', '-', '', '-', '02', '20147'),
@@ -1606,6 +1568,57 @@ INSERT INTO `m_prop` (`KODE_PROP`, `KETERANGAN`, `WILAYAH`, `DINAS_TEKNIS`, `ALA
 ('97', 'Perhutani PUSAT', 'SELURUH INDONESIA', 'PERHUTANI', 'Gd. Manggala Wanabakti, Blok 4, R.915', 'Jakarta', '021-5734395', '021-57902769', '-', '', 'aphi@rimbawan.com', '', '10270'),
 ('99', 'APHI', 'SELURUH INDONESIA', 'ASOSIASI PENGUSAHA HUTAN INDONESIA', 'Gd. Manggala Wanabakti, Blok 4, R.915', 'Jakarta', '021-5734395', '021-57902769', '-', '', 'aphi@rimbawan.com', '', '10270');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m_roles`
+--
+
+CREATE TABLE `m_roles` (
+  `id` int NOT NULL,
+  `nama_role` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Dumping data for table `m_roles`
+--
+
+INSERT INTO `m_roles` (`id`, `nama_role`) VALUES
+(1, 'Admin'),
+(2, 'Verifikator'),
+(3, 'BPHP'),
+(4, 'Dinas Kehutanan'),
+(5, 'PBPH');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `username` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `password` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `nama` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `jabatan` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `telp` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `email` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_role`
+--
+
+CREATE TABLE `user_role` (
+  `id_user` int DEFAULT NULL,
+  `id_role` int DEFAULT NULL,
+  `id_provinsi` int DEFAULT NULL,
+  `id_pbph` varchar(20) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
 --
 -- Indexes for dumped tables
 --
@@ -1614,6 +1627,12 @@ INSERT INTO `m_prop` (`KODE_PROP`, `KETERANGAN`, `WILAYAH`, `DINAS_TEKNIS`, `ALA
 -- Indexes for table `invoices`
 --
 ALTER TABLE `invoices`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `m_bphp`
+--
+ALTER TABLE `m_bphp`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1635,16 +1654,28 @@ ALTER TABLE `m_kelompok_jenis_kayu`
   ADD PRIMARY KEY (`KEL_NO`);
 
 --
--- Indexes for table `m_perusahaan`
+-- Indexes for table `m_pbph`
 --
-ALTER TABLE `m_perusahaan`
+ALTER TABLE `m_pbph`
   ADD PRIMARY KEY (`NPWSHUT_NO`);
 
 --
--- Indexes for table `m_prop`
+-- Indexes for table `m_provinsi`
 --
-ALTER TABLE `m_prop`
+ALTER TABLE `m_provinsi`
   ADD PRIMARY KEY (`KODE_PROP`);
+
+--
+-- Indexes for table `m_roles`
+--
+ALTER TABLE `m_roles`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1661,6 +1692,12 @@ ALTER TABLE `invoices`
 --
 ALTER TABLE `m_diameters`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `m_roles`
+--
+ALTER TABLE `m_roles`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
