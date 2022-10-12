@@ -31,7 +31,8 @@
 
   <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>SI</b>PATOK</a>
+        <h6>Sistem Informasi Harga Patokan</h6>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">

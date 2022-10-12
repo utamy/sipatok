@@ -24,8 +24,9 @@
 				// proses pengecekan username dan password di database beradi di model_user dengan memparsing $username dan $password
 				// $loginUser untuk mengecek user pada tbl_user sedangkan $loginGuru memerika ke dalam tbl_guru
 				$loginUser		= $this->model_user->login($username, $password);
+				
 
-				$loginGuru  	= $this->model_guru->login($username, $password);
+				// $loginGuru  	= $this->model_guru->login($username, $password);
 				
 				// $loginUser-> mengambil nilai dari $user yang ada di function login pada model_user, apabila data salah maka user tidak berisi dan $loginUser menjadi kosong
 				// apablia $loginUser tidak kosong (memiliki data) maka akan membuat session dan redirect ke tampilan_utama
@@ -33,9 +34,8 @@
 					
 					// $this->session->set_userdata($loginUser); -> maksudnya mengset userdata yang mana datanya diambil dari $loginUser
 					$this->session->set_userdata($loginUser);
-				
-
-					if($loginUser['id_level_user'] == 2) {
+					
+					if($loginUser['id_role'] == '5') {
 						redirect('tampilan_operator');
 					} else if ($loginUser['id_level_user'] == '1'){
 						redirect('tampilan_utama');
