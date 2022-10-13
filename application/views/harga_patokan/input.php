@@ -93,8 +93,12 @@
                                     <td>
                                         <select name="id_jenis_kayu" class="form-control jenis-kayu">    
                                             <option>Masukkan Jenis Kayu</option>
-                                            <option value="0">Meranti Merah</option>
-                                            <option value="1">Meranti Biru</option>
+                                            <?php
+                                                $menu = $this->db->get('m_jenis_kayu');
+                                                foreach ($menu->result() as $row) {
+                                                    echo "<option value='$row->KAYU_NO'>$row->KETERANGAN</option>";
+                                                }
+                                            ?>
                                         </select>
                                     </td>
                                     <td>
@@ -160,8 +164,12 @@
                             '<td>'+
                                 '<select name="id_jenis_kayu" class="form-control jenis-kayu">'+    
                                     '<option>Masukkan Jenis Kayu</option>'+
-                                    '<option value="0">Meranti Merah</option>'+
-                                    '<option value="1">Meranti Biru</option>'+
+                                    "<?php
+                                        $menu = $this->db->get('m_jenis_kayu');
+                                        foreach ($menu->result() as $row) {
+                                            echo "<option value='$row->KAYU_NO'>$row->KETERANGAN</option>";
+                                        }
+                                    ?>"+
                                 '</select>'+
                             '</td>'+
                             '<td>'+
