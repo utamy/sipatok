@@ -31,7 +31,7 @@
 
   <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>SIPATOK</b></a>
+        <a href="../../index2.html"><b>Admin</b>LTE</a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
