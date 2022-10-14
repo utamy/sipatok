@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SIPATOK | Sistem Informasi Harga Patokan</title>
+  <title>SIPATOK | Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -31,14 +31,12 @@
 
   <div class="login-box">
       <div class="login-logo">
-        <a href="../../index2.html"><b>Admin</b>LTE</a>
+        <a href="../../index2.html"><b>SI</b>-PATOK</a>
       </div>
       <!-- /.login-logo -->
       <div class="login-box-body">
-      <center><img src="<?php echo base_url(); ?>/uploads/logo.png" alt="" style="width:100px"></center>
-
-        <p class="login-box-msg">Sistem Informasi Harga Patokan</p>
-
+        <p class="login-box-msg"><b>SISTEM INFORMASI HARGA PATOKAN</b><br>KEMENTERIAN LINGKUNGAN HIDUP DAN KEHUTANAN</p>
+        <center><img src="<?php echo base_url(); ?>/uploads/logo.png" alt="" style="width:100px;"></center><br>
         <?php echo form_open('auth/check_login'); ?>
 
             <div class="form-group has-feedback">
@@ -53,11 +51,7 @@
 
             <div class="row">
               <div class="col-xs-8">
-                <div class="checkbox icheck">
-                  <label>
-                    <input type="checkbox"> Remember Me
-                  </label>
-                </div>
+                
               </div>
               <!-- /.col -->
               <div class="col-xs-4">
