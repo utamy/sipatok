@@ -20,6 +20,7 @@ class Data extends CI_Controller {
 	 */
 	public function index()
 	{
+		//gilang//
 		$this->template->load('template', 'harga_patokan/data');
 	}
 }
