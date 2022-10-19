@@ -5,6 +5,7 @@
 		
 		function index()
 		{
+			
 			$this->template->load('template', 'dashboard-operator');
 		}
 
