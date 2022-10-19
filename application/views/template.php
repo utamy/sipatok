@@ -17,14 +17,11 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
-  
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
 
   <script src="<?php echo base_url(); ?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -147,10 +144,10 @@
         <!-- menu dinamis -->
 
         <?php
-        $id_level_user = $this->session->userdata('id_role');
-        
-        $sql_menu = "SELECT * FROM `tabel_menu` WHERE id IN(SELECT id_menu FROM menu_role WHERE id_role = $id_level_user) AND is_main_menu = 0";
-        
+        $id_level_user = $this->session->userdata('id_level_user');
+
+        $sql_menu = "SELECT * FROM `tabel_menu` WHERE id IN(SELECT id_menu FROM tbl_user_rule WHERE id_level_user = $id_level_user) AND is_main_menu = 0";
+
         $main_menu  = $this->db->query($sql_menu)->result();
 
         foreach ($main_menu as $main) {
